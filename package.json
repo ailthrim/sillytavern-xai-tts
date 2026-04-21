@@ -1,0 +1,6 @@
+{
+    "name": "sillytavern-xai-tts",
+    "private": true,
+    "type": "module",
+    "main": "server/index.mjs"
+}

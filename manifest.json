@@ -1,0 +1,12 @@
+{
+    "display_name": "xAI TTS",
+    "loading_order": 11,
+    "requires": [],
+    "dependencies": [
+        "tts"
+    ],
+    "js": "extension/index.js",
+    "author": "Ailthrim",
+    "version": "0.1.0",
+    "homePage": "https://github.com/ailthrim/sillytavern-xai-tts"
+}
