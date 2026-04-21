@@ -10,15 +10,12 @@ const DEFAULT_VOICES = [
     { name: 'Una', voice_id: 'una', lang: '' },
 ];
 const MAX_TEXT_LENGTH = 15000;
-const SUPPORTED_CODECS = new Set(['mp3', 'wav', 'pcm', 'mulaw', 'alaw']);
+const SUPPORTED_CODECS = new Set(['mp3', 'wav']);
 const SUPPORTED_SAMPLE_RATES = new Set([8000, 16000, 22050, 24000, 44100, 48000]);
 const SUPPORTED_BIT_RATES = new Set([32000, 64000, 96000, 128000, 192000]);
 const CONTENT_TYPES = {
     mp3: 'audio/mpeg',
     wav: 'audio/wav',
-    pcm: 'audio/L16',
-    mulaw: 'audio/basic',
-    alaw: 'audio/basic',
 };
 
 export const info = {

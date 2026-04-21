@@ -82,9 +82,6 @@ class XaiTtsProvider {
         <select id="xai_tts_codec">
             <option value="mp3">mp3</option>
             <option value="wav">wav</option>
-            <option value="pcm">pcm</option>
-            <option value="mulaw">mulaw</option>
-            <option value="alaw">alaw</option>
         </select>
         <label class="displayBlock" for="xai_tts_sample_rate">Sample rate:</label>
         <select id="xai_tts_sample_rate">
@@ -141,7 +138,7 @@ class XaiTtsProvider {
 
     onSettingsChange() {
         this.settings.language = String($('#xai_tts_language').val());
-        this.settings.codec = String($('#xai_tts_codec').val());
+        this.settings.codec = normalizeCodecSetting($('#xai_tts_codec').val());
         this.settings.sample_rate = Number($('#xai_tts_sample_rate').val());
         this.settings.bit_rate = Number($('#xai_tts_bit_rate').val());
         this.settings.strip_emoji = !!$('#xai_tts_strip_emoji').prop('checked');
@@ -282,6 +279,11 @@ function clampChunkSize(value) {
     }
 
     return Math.min(Math.max(Math.round(number), MIN_CHUNK_SIZE), SAFE_TEXT_LIMIT);
+}
+
+function normalizeCodecSetting(value) {
+    const codec = String(value || 'mp3').toLowerCase();
+    return codec === 'wav' ? 'wav' : 'mp3';
 }
 
 function splitTextIntoChunks(text, preferredSize = DEFAULT_CHUNK_SIZE) {
