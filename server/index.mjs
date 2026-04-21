@@ -1,4 +1,4 @@
-import { readSecret, SECRET_KEYS } from '../../src/endpoints/secrets.js';
+import { readSecret, SECRET_KEYS } from '../../../src/endpoints/secrets.js';
 
 const XAI_BASE_URL = 'https://api.x.ai';
 const DEFAULT_VOICES = [
